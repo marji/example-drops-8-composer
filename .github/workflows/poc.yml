@@ -16,3 +16,5 @@ jobs:
         run: composer validate
       - name: Run composer install
         run: composer install
+      - name: git ops
+        run: git status && git remote show origin
