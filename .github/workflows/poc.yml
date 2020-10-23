@@ -6,14 +6,20 @@ on:
       - master
 
 jobs:
-  job_one:
-    name: preparation
+  validate:
+    name: Validate
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v2
       - name: Validate composer.json and composer.lock
         run: composer validate
+  tests:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
       - name: Run composer install
         run: composer install
       - name: git ops
