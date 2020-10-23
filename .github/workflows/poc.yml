@@ -21,6 +21,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Run composer install
-        run: composer install
+        run: composer install --no-progress
       - name: git ops
         run: git status && git remote show origin
