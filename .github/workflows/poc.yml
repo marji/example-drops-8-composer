@@ -1,0 +1,16 @@
+---
+# Trigger the workflow on push to master
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  job_one:
+    name: preparation
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Validate composer.json and composer.lock
+        run: composer validate
